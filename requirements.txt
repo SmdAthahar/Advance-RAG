@@ -1,0 +1,21 @@
+# Dependencies for 01_document_loaders
+langchain
+langchain-community
+langchain_pdf
+pypdf
+rapidocr-onnxruntime
+pytesseract
+pdfplumber
+pdfminer.six
+jq
+beautifulsoup4
+lxml
+ipykernel
+
+# Dependencies for 02_text_splitters
+langchain-text-splitters
+langchain-experimental
+langchain-openai
+python-dotenv
+tiktoken
+termcolor
