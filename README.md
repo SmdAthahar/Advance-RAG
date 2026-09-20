@@ -1,30 +1,12 @@
 # Advance RAG
 
-A hands-on learning repository focused on understanding and implementing the different components of a **Retrieval-Augmented Generation (RAG)** pipeline.
+A collection of implementations and notes covering key components used in Retrieval-Augmented Generation (RAG) systems.
 
-This repository documents my learning and practice as I build my understanding of RAG step by step — from loading raw data to preparing it for embeddings, retrieval, and generation.
+## 01 — Document Loaders
 
----
+Document Loaders are used to load information from different sources into a format that can be processed by a RAG pipeline.
 
-## 📌 RAG Learning Progress
-
-- [x] Document Loaders
-- [x] Text Splitters
-- [ ] Vector Embeddings
-- [ ] Vector Databases
-- [ ] Retrieval
-- [ ] Reranking
-- [ ] RAG Pipeline
-- [ ] Advanced RAG
-- [ ] Agents
-
----
-
-# 01 — Document Loaders
-
-Document loaders are responsible for loading information from different sources into a format that can be processed by the RAG pipeline.
-
-During this stage, I practiced loading data from different sources such as:
+Common sources include:
 
 - PDF
 - CSV
@@ -32,42 +14,29 @@ During this stage, I practiced loading data from different sources such as:
 - Text files
 - Web pages
 
-### LangChain Document
+In LangChain, loaders typically convert this data into `Document` objects containing:
 
-Most LangChain document loaders return LangChain `Document` objects.
+- `page_content` — the actual content
+- `metadata` — information about the source or context
 
-A `Document` mainly contains:
+This provides a consistent format for the next stages of a RAG pipeline.
 
-```python
-Document(
-    page_content="...",
-    metadata={...}
-)
+## 02 — Text Splitters
 
-# 02 — Text Splitters
+Text Splitters divide large documents into smaller, meaningful chunks before they are converted into embeddings.
 
-After loading documents, the next step I practiced was **Text Splitting**.
+Effective chunking is important because the quality and context of chunks can directly affect retrieval and, ultimately, the quality of the generated answer.
 
-Large documents cannot always be passed directly into an embedding model. They need to be divided into smaller, meaningful pieces called **chunks**.
+Key concepts include:
 
-The basic RAG flow at this stage is:
+- Chunk size
+- Chunk overlap
+- Separators
+- Recursive splitting
+- Semantic splitting
+- LLM-based splitting
 
-Document → Text Splitter → Chunks → Embeddings → Vector Database
+The repository includes implementations of different text-splitting approaches, including Character, Recursive Character, Document, Semantic, and LLM-based splitters.
 
-## Why Text Splitting Matters
-
-Chunking is not simply about splitting text into a fixed number of characters.
-
-The way a document is divided can affect:
-
-- Retrieval quality
-- Context preservation
-- Embedding quality
-- Answer quality
-
-For example, if related information is split across different chunks, the retriever may retrieve only part of the required context.
-
-Therefore, the goal is to create chunks that are small enough for efficient processing while still preserving meaningful context.
-
-
+More topics will be added and this README will be updated as the repository continues to evolve.
 
