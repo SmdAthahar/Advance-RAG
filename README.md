@@ -38,5 +38,37 @@ Key concepts include:
 
 The repository includes implementations of different text-splitting approaches, including Character, Recursive Character, Document, Semantic, and LLM-based splitters.
 
-More topics will be added and this README will be updated as the repository continues to evolve.
+## 03 — Embeddings
 
+Embeddings convert text into numerical vector representations that capture the semantic meaning of the content.
+
+This allows RAG systems to compare and retrieve information based on semantic similarity rather than just keyword matching.
+
+Topics covered include:
+
+- Document embeddings
+- Query embeddings
+- OpenAI embeddings
+- `text-embedding-3-small`
+- `text-embedding-3-large`
+- Custom embedding dimensions
+
+## 04 — Vector Stores
+
+Vector stores are used to store embeddings and efficiently retrieve relevant information based on vector similarity.
+
+The repository includes hands-on implementations using **ChromaDB**, including:
+
+- Adding documents
+- Similarity search
+- Similarity search with scores
+- Updating documents
+- Deleting documents
+- CRUD operations
+- Persisting vector stores
+
+A PDF-to-vector-store pipeline is also implemented:
+
+**PDF → Document Loading → Chunking → Embeddings → ChromaDB → Retrieval**
+
+More topics will be added and this README will be updated as the repository continues to evolve.
