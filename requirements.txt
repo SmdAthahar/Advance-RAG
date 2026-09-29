@@ -19,3 +19,7 @@ langchain-openai
 python-dotenv
 tiktoken
 termcolor
+
+# Dependencies for 04_vector_stores
+chromadb
+langchain-chroma
